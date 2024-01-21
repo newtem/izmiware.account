@@ -3,61 +3,128 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign Up</title>
+  <title>izmiware</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: url('https://cdn.discordapp.com/attachments/1081975612509532161/1198737179183157409/0922ca7918452252.png?ex=65bffdfe&is=65ad88fe&hm=62723c0a1ba0db42903e152325a32c50cf71f7c2c58e1b7935e463495c6131d0') no-repeat center center fixed;
+      background-size: cover;
+      background-position: center;
+      background-color: rgba(128, 128, 128, 0.99); 
     }
+
     form {
+      background-color: transparent;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
       max-width: 400px;
-      margin: auto;
-    }
-    label {
-      display: block;
-      margin-bottom: 8px;
-    }
-    input {
       width: 100%;
-      padding: 8px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #fff; 
+      font-size: 24px;
       margin-bottom: 16px;
     }
+
+    h2 span {
+      color: #ffc0cb;
+    }
+
+    .input-wrapper {
+      position: relative;
+      margin-bottom: 16px;
+    }
+
+    .input-wrapper input {
+      width: 100%;
+      padding: 8px;
+      border: none;
+      outline: none;
+      box-sizing: border-box;
+      font-size: 16px;
+      border-bottom: 2px solid #ccc;
+      background-color: transparent;
+      color: #fff;
+    }
+
+    .input-wrapper input:focus {
+      border-bottom-color: #ffc0cb; 
+    }
+
+    input::placeholder {
+      color: transparent;
+    }
+
+    input:focus::placeholder, input:not(:placeholder-shown)::placeholder {
+      color: transparent; 
+    }
+
+    .input-description {
+      color: #ccc;
+      font-size: 14px;
+      margin-top: 4px;
+    }
+
     button {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 15px;
+      background-color: #ffc0cb;
+      color: #fff;
+      padding: 10px 15px; 
       border: none;
       border-radius: 4px;
       cursor: pointer;
+      width: 100%;
+      font-size: 16px;
     }
   </style>
 </head>
 <body>
 
-  <h2>Sign Up</h2>
-
   <form id="signupForm">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required>
+    <h2><span style="color: #fff;">izmi</span><span>ware</span></h2>
 
-    <label for="invite">Invite Code:</label>
-    <input type="text" id="invite" name="invite" required>
+    <div class="input-wrapper">
+      <input type="text" id="username" name="username" placeholder=" " required>
+      <div class="input-description">Nickname</div>
+    </div>
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
+    <div class="input-wrapper">
+      <input type="email" id="email" name="email" placeholder=" " required>
+      <div class="input-description">Email</div>
+    </div>
 
-    <button type="button" onclick="submitForm()">Sign Up</button>
+    <div class="input-wrapper">
+      <input type="password" id="password" name="password" placeholder=" " required>
+      <div class="input-description">Password</div>
+    </div>
+
+    <div class="input-wrapper">
+      <input type="text" id="invite" name="invite" placeholder=" " required>
+      <div class="input-description">Invite code</div>
+    </div>
+
+    <button type="button" onclick="submitForm()">Register</button>
   </form>
 
   <script>
     function submitForm() {
       var username = document.getElementById("username").value;
-      var invite = document.getElementById("invite").value;
+      var email = document.getElementById("email").value;
       var password = document.getElementById("password").value;
+      var invite = document.getElementById("invite").value;
 
       console.log("Username:", username);
-      console.log("Invite Code:", invite);
+      console.log("Email:", email);
       console.log("Password:", password);
+      console.log("Invite Code:", invite);
     }
   </script>
 
