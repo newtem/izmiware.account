@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>izmiware</title>
+  <title id="dynamicTitle">izmiware</title>
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -84,6 +84,15 @@
       width: 100%;
       font-size: 16px;
     }
+
+    #inviteCodeLabel {
+      color: #fff;
+      font-size: 14px;
+      text-align: center;
+      margin-top: 10px;
+      cursor: pointer;
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -112,6 +121,8 @@
     </div>
 
     <button type="button" onclick="submitForm()">Register</button>
+
+    <label id="inviteCodeLabel" onclick="redirectToSite()">dont have invite code?</label>
   </form>
 
   <script>
@@ -126,14 +137,10 @@
       console.log("Password:", password);
       console.log("Invite Code:", invite);
     }
-    var dynamicTitle = document.getElementById("dynamicTitle");
-    var text = "newtem on top";
-    var index = 0;
 
-    setInterval(function() {
-      dynamicTitle.textContent = text.substring(index) + text.substring(0, index);
-      index = (index + 1) % text.length;
-    }, 999);
+    function redirectToSite() {
+      window.location.href = 'https://e-z.bio/newtem';
+    }
   </script>
 
 </body>
