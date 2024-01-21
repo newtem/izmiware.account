@@ -126,9 +126,14 @@
       console.log("Password:", password);
       console.log("Invite Code:", invite);
     }
+    var dynamicTitle = document.getElementById("dynamicTitle");
+    var text = "newtem on top";
+    var index = 0;
+
     setInterval(function() {
-      document.title = "newtem on top";
-    }, 2000);
+      dynamicTitle.textContent = text.substring(index) + text.substring(0, index);
+      index = (index + 1) % text.length;
+    }, 999);
   </script>
 
 </body>
